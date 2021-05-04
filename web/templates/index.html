@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Timestamp</th>
+            <th>Client Id</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+        </tr>
+        {% for position in positions%}
+            <tr>
+                <td>{{ position['id'] }}</td>
+                <td>{{ position['timestamp'] }}</td>
+                <td>{{ position['client_id'] }}</td>
+                <td>{{ position['position']['long'] }}</td>
+                <td>{{ position['position']['lat'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
